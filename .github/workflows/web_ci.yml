@@ -27,12 +27,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        server-id: github 
-        settings-path: ${{ github.workspace }} 
-
-    - name: Install Google Chrome 
-    - uses: browser-actions/setup-chrome@latest
-    - run: chrome --version
-
+  
+    - name: Prepare Selenium
+    - uses: nanasess/setup-chromedriver@v2
+    - run: |
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+    
     - name: Build with Maven
       run: mvn -B package --file pom.xml test
