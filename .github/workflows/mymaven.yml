@@ -27,6 +27,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+
+    - name: Start selenoid
+      uses: Xotabu4/selenoid-github-action@v2
+    - uses: actions/checkout@v1
+    - run: npm ci  
      
     - uses: nanasess/setup-chromedriver@v2
     - run: |
