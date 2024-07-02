@@ -30,6 +30,8 @@ jobs:
         
     - name: Install Homebrew
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Install slenium
+      run: brew install selenium-server
     - name: Start selenium
       run: brew services start selenium-server-standalone
     - uses: browser-actions/setup-chrome@v1
