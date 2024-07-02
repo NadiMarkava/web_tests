@@ -29,7 +29,6 @@ jobs:
         cache: maven
      
     - uses: nanasess/setup-chromedriver@v2
-    - run: chrome --version
      
     - name: Build with Maven
       run: mvn -B clean test
