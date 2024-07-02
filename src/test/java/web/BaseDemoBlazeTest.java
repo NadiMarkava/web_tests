@@ -41,7 +41,6 @@ public class BaseDemoBlazeTest implements IAbstractTest, ITestListener {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
-        WebDriver driver = new ChromeDriver(options);
-        return getDriver();
+        return getDriver(DEFAULT, options);
     }
 }
