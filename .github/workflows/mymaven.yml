@@ -6,19 +6,19 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
-
+name: Selenium with TestNG - CI
+ 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+ 
 jobs:
   build:
-
+ 
     runs-on: ubuntu-latest
-
+ 
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -27,13 +27,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        
-    - name: Install Homebrew
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    - name: Install selenium
-      run: brew install selenium-server
-    - name: Start selenium
-      run: brew services start selenium-server-standalone
-    - uses: browser-actions/setup-chrome@v1
+     
+    - uses: browser-actions/setup-chrome@latest
+    - run: chrome --version
+     
     - name: Build with Maven
-      run: mvn clean test
+      run: mvn -B clean test
