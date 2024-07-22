@@ -1,9 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite verbose="1" name="Web Tests suite" skipfailedinvocationcounts="false" junit="false" parallel="methods"
+<suite verbose="1" name="Cart Tests suite" skipfailedinvocationcounts="false" junit="false" parallel="methods"
        annotations="JDK" thread-count="2">
 
+    <parameter name="jenkinsJobCreation" value="true"/>
     <parameter name="suiteOwner" value="nknysh"/>
+    <parameter name="jenkinsJobName" value="Cart-tests"/>
+    <parameter name="jenkinsJobType" value="web"/>
+    <parameter name="jenkinsEmail" value="nadimarkava@solvd.com"/>
+    <parameter name="jenkinsEnvironments" value="DEMO"/>
+
+<!--    <parameter name="jenkinsRegressionPipeline" value="My_WEB_Cron_Job"/>-->
+<!--    <parameter name="jenkinsRegressionMatrix" value="env: DEMO; env:PROD"/>-->
 
     <test name="Cart Tests">
         <classes>
