@@ -10,8 +10,9 @@
     <parameter name="jenkinsEmail" value="nadimarkava@solvd.com"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
 
-<!--    <parameter name="jenkinsRegressionPipeline" value="My_WEB_Cron_Job"/>-->
-<!--    <parameter name="jenkinsRegressionMatrix" value="browser: chrome; browser:firefox"/>-->
+    <parameter name="jenkinsRegressionPipeline" value="My_WEB_Cron_Job"/>
+    <parameter name="jenkinsPipelineScheduling" value="45 16 * * *"/>
+    <parameter name="jenkinsRegressionMatrix" value="browser: chrome; browser:firefox"/>
 
     <test name="Authentication Tests">
         <classes>
